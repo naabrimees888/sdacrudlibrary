@@ -41,8 +41,11 @@ public class CrudExample {
         EmployeeEntity employeeEntity = employeeRepository.findById(1L);
         System.out.println(employeeEntity.getName() != null ? employeeEntity.toString() : "No employee found");
 
-        log.info("deleting specified employee frm table");
-        employeeRepository.delete(5L);
+//        log.info("deleting specified employee frm table");
+//        employeeRepository.delete(5L);
 
-        }
+        log.info("updating specified employee frm table");
+        employeeRepository.update(EmployeeEntity.builder().id(2).name("Andre").age(36).city("Laagri").build());
+
+    }
     }
