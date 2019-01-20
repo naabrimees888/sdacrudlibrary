@@ -26,6 +26,18 @@ public interface CrudRepository<T> {
      * @throws IllegalArgumentException if {@code id} is {@literal null}.
      */
 
-    Optional<T> findById(long id);
+    T findById(long id);
 
+    /**
+     *
+     * @return
+     */
+
+    long count();
+
+    int delete(long id);
+
+    int update(T updatedEntity);
+
+    int insert(T newEntity);
 }

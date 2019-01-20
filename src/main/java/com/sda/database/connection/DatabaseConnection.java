@@ -64,4 +64,23 @@ public abstract class DatabaseConnection {
             throw new IllegalStateException();
         }
     }
+     public int delete(final String sql){
+            Statement statement = null;
+            try {
+                statement = connection.createStatement();
+                int result = statement.executeUpdate(sql);
+                if (result > 0){
+                    log.info(result + " row is affected and deleted.");
+                    return result;
+                }else {
+                    throw new NoSuchFieldException();
+                }
+
+            } catch (SQLException e) {
+                throw new IllegalStateException();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+            return 0;
+     }
 }
