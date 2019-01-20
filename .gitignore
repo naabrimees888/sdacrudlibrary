@@ -4,6 +4,7 @@
 *.iws
 *.ids
 .idea/
+.idea/*.xml
 out/
 
 # Eclipse IDE
